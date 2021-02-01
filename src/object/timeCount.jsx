@@ -1,7 +1,9 @@
 var callBack;
-var CountNum;
+var CountNum = 0;
 
 const startTimeCount = (call, _inputNum) => {
+  console.log('CountNum is ' + CountNum);
+  if (CountNum != 0) return;
   callBack = call;
   // 存時間.
   console.log('tmpname is ' + _inputNum);
