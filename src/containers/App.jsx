@@ -7,11 +7,9 @@ const App = () => {
   // }
   return (
     <div>
-      <div> 抽你媽逼 </div>
-      <timeCount></timeCount>
-      <br />
-      <br />
-      <randObject></randObject>
+      <div> 抽 </div>
+      <timeCount />
+      <randObject />
     </div>
   );
 };

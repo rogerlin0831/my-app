@@ -1,29 +1,31 @@
+import { randObject } from '../object/data';
+import React, { useState } from 'react';
+
 const timeCount = () => {
-  // 每次更新暫存.
-  const [tmpnum, setTmpNum] = useState('');
-
   // 狀態.
-  const [stateWord, setStateWord] = useState('Idle');
-
-  // 贏家.
-  const [winner, setWinner] = useState('');
+  var stateWord = '';
+  var tmpnum = '';
 
   // 更新text.
   const handleChangeName = event => {
-    setTmpNum(event.target.value);
+    tmpnum = event.target.value;
   };
+
+  function setStateWord(x) {
+    stateWord = x;
+  }
 
   // 按下按鈕.
   const pushButton = () => {
     // 贏家洗白.
-    setWinner('');
+    randObject.setWinnerName('');
 
     // 狀態等待.
     setStateWord('Wait..');
 
     startTimeCount(() => {
-      var win = getWinner();
-      setWinner(win);
+      var win = randObject.getWinner();
+      randObject.setWinnerName(win);
       setStateWord('Finish');
     }, tmpnum);
   };

@@ -1,20 +1,17 @@
+import React, { useState } from 'react';
+import { timeCount } from '../object/timeCount';
+
 const randObject = () => {
   // 狀態.
   var stateName = ['請設定時間', '倒數中...', '抽獎中...', '結果為:'];
   // 抽獎名單.
   var nameList = ['POPO-Dog', 'POPO-Cat', 'POPO-Fuck', 'POPO阿狗阿貓'];
-  //
-  var gtimes = 0;
 
-  // 狀態列舉.
-  // enum eprocess {
-  //   eIdle,
-  //   esetTime,
-  //   ecountDown,
-  //   erand,
-  //   eresult,
-  //   eEnd,
-  // }
+  var winner = '';
+
+  function setWinnerName(x) {
+    winner = x;
+  }
 
   function getRandom(x) {
     return Math.floor(Math.random() * x);
@@ -43,7 +40,7 @@ const randObject = () => {
       <br />
       <br />
       <div> 抽獎狀態 : </div>
-      <div> {stateWord} </div>
+      <div> {timeCount.stateWord} </div>
     </div>
   );
 };
