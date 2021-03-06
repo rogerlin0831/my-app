@@ -1,7 +1,6 @@
-import { randObject } from '../object/data';
 import React, { useState } from 'react';
 
-const timeCount = () => {
+const TimeCount = () => {
   // 狀態.
   var stateWord = '';
   var tmpnum = '';
@@ -17,15 +16,12 @@ const timeCount = () => {
 
   // 按下按鈕.
   const pushButton = () => {
-    // 贏家洗白.
-    randObject.setWinnerName('');
-
     // 狀態等待.
     setStateWord('Wait..');
 
     startTimeCount(() => {
-      var win = randObject.getWinner();
-      randObject.setWinnerName(win);
+      // var win = RandObject.getWinner();
+      // RandObject.setWinnerName(win);
       setStateWord('Finish');
     }, tmpnum);
   };
@@ -74,7 +70,6 @@ const timeCount = () => {
     }
     setTimeout(TestCountDown, 1000);
   };
-
   return (
     <div>
       時間設定:
@@ -92,4 +87,4 @@ const timeCount = () => {
   );
 };
 
-export { timeCount };
+export default TimeCount;

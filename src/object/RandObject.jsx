@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { timeCount } from '../object/timeCount';
 
-const randObject = () => {
+const RandObject = () => {
   // 狀態.
   var stateName = ['請設定時間', '倒數中...', '抽獎中...', '結果為:'];
   // 抽獎名單.
@@ -40,9 +39,8 @@ const randObject = () => {
       <br />
       <br />
       <div> 抽獎狀態 : </div>
-      <div> {timeCount.stateWord} </div>
     </div>
   );
 };
 
-export { randObject };
+export default RandObject;
